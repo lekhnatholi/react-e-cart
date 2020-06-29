@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 export const ButtonContainer = styled.button`
+    border-color:${props=>props.cart ? "var(--mainYellow)": "var(--lightBlue)"};
+    color:${props=>props.cart ? "var(--mainYellow)": "var(--lightBlue)"};
+    $:hover{
+        background:${props=>props.cart ? "var(--mainYellow)": "var(--lightBlue)"}
+        };
     text-transform: capitalize;
     font-size: 1.4rem;
     background:transparent;
