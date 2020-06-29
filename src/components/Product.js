@@ -12,14 +12,17 @@ export default class Product extends Component {
             <ProductWrapper className="col-9 col-md-6 mx-auto my-3 col-lg-3">
                 <div className="card">
                     <ProductConsumer>
-
                         {value => {
                             return (
                                 <div className="img-container img-cover p-5" onClick={() => value.handleDetail(id)}>
                                     <Link to='/details'>
                                         <img src={img} alt="product" className="card-img-top" />
                                     </Link>
-                                    <button className="card-btn" disabled={inCart ? true : false} onClick={() => console.log('button clicked')}>
+                                    <button className="card-btn" disabled={inCart ? true : false}
+                                        onClick={() => {
+                                            value.addToCart(id);
+                                            value.openModal(id);
+                                        }}>
                                         {inCart ? (<p className="text-capitalize mb-0" disabled>{""} incart</p>) : (<i className="fa fa-cart-plus" />)}
                                     </button>
                                 </div>
@@ -39,7 +42,7 @@ export default class Product extends Component {
 
 
                 </div>
-            </ProductWrapper>
+            </ProductWrapper >
         )
     }
 }
