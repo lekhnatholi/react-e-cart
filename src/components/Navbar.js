@@ -10,21 +10,21 @@ export default class Navbar extends Component {
         return (
             <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
                 <Link to="/">
-                    <img src={ logo } alt="store " className="navbar-brand" />
+                    <img src={logo} alt="store " className="navbar-brand" />
                 </Link>
                 <ul className="navbar-nav align-items-center">
                     <li className="nav-item ml-5">
                         <Link to='/' className="nav-link">
-                        product 
+                            product
                         </Link>
-                    </li>  
+                    </li>
                 </ul>
                 <Link to='/cart' className="ml-auto">
                     <ButtonContainer>
-                         <span className="mr-2">
+                        <span className="mr-2">
                             <i className="fa fa-cart-plus" />
                         </span>
-                        my cart 
+                        my cart
                     </ButtonContainer>
                 </Link>
             </NavWrapper>
@@ -32,7 +32,7 @@ export default class Navbar extends Component {
     }
 }
 
-const NavWrapper= Styled.nav`
+const NavWrapper = Styled.nav`
     background:var(--mainBlue);
     .nav-link{
         color:var(--mainWhite) !important;
